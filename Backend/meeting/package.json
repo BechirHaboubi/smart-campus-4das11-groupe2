@@ -1,0 +1,13 @@
+{
+  "name": "meeting-service",
+  "version": "1.0.0",
+  "description": "Microservice Meeting (Node.js / Express) avec client Eureka et Actuator /health /info",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "eureka-js-client": "^4.5.0"
+  }
+}
