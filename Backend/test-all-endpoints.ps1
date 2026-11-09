@@ -1,29 +1,26 @@
-# Script de verification complete des endpoints Eureka et Actuator
+# Script de verification complete des endpoints Smart Campus
 Write-Host "==========================================================" -ForegroundColor Cyan
-Write-Host " Verification des Microservices AWD (Eureka & Actuator)" -ForegroundColor Cyan
+Write-Host " Verification des Microservices Smart Campus (AWD 4DAS11)" -ForegroundColor Cyan
 Write-Host "==========================================================" -ForegroundColor Cyan
 Write-Host ""
 
 $endpoints = @(
     @{ Name = "Eureka Dashboard"; Url = "http://localhost:8761" },
-    @{ Name = "Eureka Apps (JSON/XML)"; Url = "http://localhost:8761/eureka/apps" },
-    @{ Name = "Candidat - Hello"; Url = "http://localhost:8081/candidats/hello" },
-    @{ Name = "Candidat - Liste Candidats"; Url = "http://localhost:8081/candidats" },
-    @{ Name = "Candidat - Actuator Health"; Url = "http://localhost:8081/actuator/health" },
-    @{ Name = "Candidat - Actuator Info"; Url = "http://localhost:8081/actuator/info" },
-    @{ Name = "Candidat - Actuator Metrics"; Url = "http://localhost:8081/actuator/metrics" },
-    @{ Name = "Candidat - HTTP Requests Metric"; Url = "http://localhost:8081/actuator/metrics/http.server.requests" },
-    @{ Name = "Job - Hello"; Url = "http://localhost:8082/jobs/hello" },
-    @{ Name = "Job - Actuator Health (DB Check)"; Url = "http://localhost:8082/actuator/health" },
-    @{ Name = "Job - Actuator Info"; Url = "http://localhost:8082/actuator/info" },
-    @{ Name = "Meeting (Node.js) - Hello"; Url = "http://localhost:8083/api/meetings/hello" },
-    @{ Name = "Meeting (Node.js) - Health"; Url = "http://localhost:8083/health" },
-    @{ Name = "Meeting (Node.js) - Info"; Url = "http://localhost:8083/info" },
-    @{ Name = "Notification (Python) - Hello"; Url = "http://localhost:8084/api/notifications/hello" },
-    @{ Name = "Notification (Python) - Health"; Url = "http://localhost:8084/health" },
-    @{ Name = "Notification (Python) - Info"; Url = "http://localhost:8084/info" },
-    @{ Name = "Candidature - Hello"; Url = "http://localhost:8085/candidatures/hello" },
-    @{ Name = "Candidature - Health"; Url = "http://localhost:8085/actuator/health" }
+    @{ Name = "ms-reservations - Salles (Bechir)"; Url = "http://localhost:8081/api/rooms" },
+    @{ Name = "ms-reservations - Actuator Health"; Url = "http://localhost:8081/actuator/health" },
+    @{ Name = "ms-reservations - Actuator Info"; Url = "http://localhost:8081/actuator/info" },
+    @{ Name = "ms-evenements - Clubs & Events (Dhia)"; Url = "http://localhost:8082/evenements/hello" },
+    @{ Name = "ms-evenements - Actuator Health (MySQL)"; Url = "http://localhost:8082/actuator/health" },
+    @{ Name = "ms-evenements - Actuator Info"; Url = "http://localhost:8082/actuator/info" },
+    @{ Name = "ms-annonces - Contents (Yassine)"; Url = "http://localhost:8083/api/contents" },
+    @{ Name = "ms-annonces - Actuator Health"; Url = "http://localhost:8083/actuator/health" },
+    @{ Name = "ms-annonces - Actuator Info"; Url = "http://localhost:8083/actuator/info" },
+    @{ Name = "ms-objets-perdus - Items (Chadha)"; Url = "http://localhost:8084/api/items" },
+    @{ Name = "ms-objets-perdus - Actuator Health"; Url = "http://localhost:8084/actuator/health" },
+    @{ Name = "ms-objets-perdus - Actuator Info"; Url = "http://localhost:8084/actuator/info" },
+    @{ Name = "ms-notifications - Notifications (Equipe)"; Url = "http://localhost:8085/api/notifications" },
+    @{ Name = "ms-notifications - Actuator Health"; Url = "http://localhost:8085/actuator/health" },
+    @{ Name = "ms-notifications - Actuator Info"; Url = "http://localhost:8085/actuator/info" }
 )
 
 foreach ($ep in $endpoints) {

@@ -1,35 +1,31 @@
 @echo off
-title Lancement Global des Microservices AWD
+title Lancement Global des Microservices Smart Campus
 echo ===================================================================
-echo     Demarrage de l'ecosysteme Eureka + Actuator (AWD 2026-2027)
+echo     Demarrage de l'ecosysteme Smart Campus (AWD 2026-2027)
 echo ===================================================================
-echo.
-echo Rappel : Si vous testez la persistance MySQL pour Job / Evenements,
-echo assurez-vous d'avoir demarre MySQL dans XAMPP ou WAMP.
 echo.
 echo 1. Lancement du serveur Eureka (Port 8761)...
 start "Eureka Server [8761]" "%~dp0start-eureka.bat"
-timeout /t 10 /nobreak >nul
+timeout /t 8 /nobreak >nul
 
-echo 2. Lancement de Candidat (Port 8081)...
-start "Candidat [8081]" "%~dp0start-candidat.bat"
+echo 2. Lancement de ms-reservations (Port 8081 - Bechir)...
+start "ms-reservations [8081]" "%~dp0start-ms-reservations.bat"
 
-echo 3. Lancement de Job (Port 8082)...
-start "Job [8082]" "%~dp0start-job.bat"
+echo 3. Lancement de ms-evenements (Port 8082 - Dhia)...
+start "ms-evenements [8082]" "%~dp0start-ms-evenements.bat"
 
-echo 4. Lancement de Candidature (Port 8085)...
-start "Candidature [8085]" "%~dp0start-candidature.bat"
+echo 4. Lancement de ms-annonces (Port 8083 - Yassine)...
+start "ms-annonces [8083]" "%~dp0start-ms-annonces.bat"
 
-echo 5. Lancement de Meeting Node.js (Port 8083)...
-start "Meeting [8083]" "%~dp0start-meeting.bat"
+echo 5. Lancement de ms-objets-perdus (Port 8084 - Chadha)...
+start "ms-objets-perdus [8084]" "%~dp0start-ms-objets-perdus.bat"
 
-echo 6. Lancement de Notification Python (Port 8084)...
-start "Notification [8084]" "%~dp0start-notification.bat"
+echo 6. Lancement de ms-notifications (Port 8085 - Equipe)...
+start "ms-notifications [8085]" "%~dp0start-ms-notifications.bat"
 
 echo.
 echo ===================================================================
-echo Tous les services sont en cours de demarrage !
-echo Ouvrez le tableau de bord Eureka dans votre navigateur :
-echo http://localhost:8761
+echo Tous les microservices officiels Smart Campus sont en cours de lancement !
+echo Ouvrez Eureka Dashboard : http://localhost:8761
 echo ===================================================================
 pause
