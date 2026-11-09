@@ -1,0 +1,19 @@
+# IDE
+.idea/
+*.iml
+.vscode/
+# Build
+target/
+build/
+out/
+# Node
+node_modules/
+dist/
+# Secrets
+.env
+*.env
+# OS
+Thumbs.db
+.DS_Store
+# Logs
+*.log
