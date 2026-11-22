@@ -17,3 +17,8 @@ Thumbs.db
 .DS_Store
 # Logs
 *.log
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
